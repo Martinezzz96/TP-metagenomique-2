@@ -163,7 +163,7 @@ def predict_genes(sequence: str, start_regex: Pattern, stop_regex: Pattern, shin
         if starting_codon is not None:
             stop_codon = find_stop(stop_regex, sequence, starting_codon)
             if stop_codon is not None:
-                gene_length = stop_codon - starting_codon + 3
+                gene_length = stop_codon - starting_codon
                 if gene_length >= min_gene_len:
                     if has_shine_dalgarno(shine_regex, sequence, starting_codon, max_shine_dalgarno_distance):
                         predicted_genes.append([starting_codon, stop_codon + 3])
